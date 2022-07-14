@@ -2,7 +2,7 @@ T = int(input())
 for i in range(T):
     inputStr = list(input())
     stack = []
-    flag = 1
+    flag = True
     for c in inputStr:
         if c == '(':
             stack.append(c)
@@ -10,10 +10,10 @@ for i in range(T):
             stack.pop(len(stack)-1)
         elif c == ')' and len(stack) == 0:
             print("NO")
-            flag = 0
+            flag = False
             break
 
-    if flag == 1 and len(stack) == 0:
+    if flag == True and len(stack) == 0:
         print("YES")
-    elif flag == 1 and len(stack) != 0:
+    elif flag == True and len(stack) != 0:
         print("NO")
